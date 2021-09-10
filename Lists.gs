@@ -52,8 +52,6 @@ var MoreThanOneItem = Object.freeze({
    
 function checkJustOne(list, errorOnNoItems, errorOnMoreThanOneItem) {
     
-  Log.functionEntryPoint()  
-    
   var functionName = 'Lists.checkJustOne()';
 
   Assert.assertObject(list, functionName, 'arg not object');
@@ -67,10 +65,8 @@ function checkJustOne(list, errorOnNoItems, errorOnMoreThanOneItem) {
   if (list.hasNext()) {
     
     item = list.next();
-    Log.fine('Found an item: ' + item.getName());
     
     // Check for the second one
-    
     if (list.hasNext()) {
       
       if (errorOnMoreThanOneItem) {   
